@@ -1,0 +1,12 @@
+package com.example.sv.Repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.sv.Entity.GiangVien;
+
+public interface GiangVienRespository extends JpaRepository<GiangVien, Long> {
+    Optional<GiangVien> findByEmail(String email);
+
+}
