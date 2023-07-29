@@ -68,13 +68,10 @@ public class LichHocServices {
 
     }
 
-    public boolean checkexistingLH(LopTC lopTC) {
-        List<LichHoc> existingLH = lichHocRepository.findByLopTC(lopTC);
-        if (existingLH.isEmpty()) {
-            return false;
-        } else {
-            return true;
-        }
+    public void DeleteLichHoc(LopTC lopTC) {
+        List<LichHoc> lichHocs = lichHocRepository.findByLopTC(lopTC);
+        lichHocRepository.deleteAll(lichHocs);
+
     }
 
     public List<LichHoc> getLichHocForWeek(LocalDate date, List<LichHoc> lichHocs) {

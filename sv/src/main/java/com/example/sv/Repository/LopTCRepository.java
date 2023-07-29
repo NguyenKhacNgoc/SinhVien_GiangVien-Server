@@ -1,6 +1,8 @@
 package com.example.sv.Repository;
 
+import java.time.DayOfWeek;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,5 +14,8 @@ public interface LopTCRepository extends JpaRepository<LopTC, Long> {
     List<LopTC> findBySinhViens(SinhVien sinhViens);
 
     List<LopTC> findByMon(Mon mon);
+
+    Optional<LopTC> findByMonAndNgayhocAndBuoihocAndPhonghoc(Mon mon, DayOfWeek ngayhoc, String buoihoc,
+            String phonghoc);
 
 }

@@ -22,7 +22,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> loginUser(@RequestBody UserDTO request) {
-        if (authServices.authenticate(request.getEmail(), request.getPassword(), request.getRole())) {
+        if (authServices.authenticateSV(request.getEmail(), request.getPassword())) {
             String token = authServices.generateToken(request.getEmail());
             AuthResponse authResponse = new AuthResponse(token);
             return ResponseEntity.ok(authResponse);

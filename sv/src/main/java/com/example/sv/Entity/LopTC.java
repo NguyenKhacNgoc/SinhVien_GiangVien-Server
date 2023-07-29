@@ -49,6 +49,8 @@ public class LopTC {
     private LocalDateTime ngaybatdauhoc;
     @Column
     private Integer soluong;
+    @Column
+    private String trangthai;
     @ManyToMany
     @JoinTable(name = "dangki_tinchi", joinColumns = @JoinColumn(name = "loptc_id"), inverseJoinColumns = @JoinColumn(name = "sinhvien_id"))
     private List<SinhVien> sinhViens;

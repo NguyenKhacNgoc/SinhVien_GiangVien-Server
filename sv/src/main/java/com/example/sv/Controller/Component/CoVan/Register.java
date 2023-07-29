@@ -107,7 +107,7 @@ public class Register {
                     User user = new User();
                     user.setEmail(request.getEmail());
                     user.setPassword(request.getPassword());
-                    user.setRole("covan");
+
                     userRepository.save(user);
                     // Xoá TempUser sau khi lưu người dùng vào User
                     tempUserRepository.delete(existingTempUser.get());
